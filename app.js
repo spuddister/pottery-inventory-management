@@ -14,7 +14,7 @@ const app = express();
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
 const mongoDB =
-  "mongodb+srv://spuddister:database321@cluster0.qhhcxbp.mongodb.net/local_library?retryWrites=true&w=majority";
+  "mongodb+srv://spuddister:database321@cluster0.qhhcxbp.mongodb.net/PotteryInventory?retryWrites=true&w=majority";
 
 DbConnect().catch((err) => console.log(err));
 async function DbConnect() {

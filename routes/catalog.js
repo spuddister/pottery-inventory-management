@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 // Require controller modules.
-const book_controller = require("../controllers/bookController");
+const item_controller = require("../controllers/itemController");
 const author_controller = require("../controllers/authorController");
 const genre_controller = require("../controllers/genreController");
 const book_instance_controller = require("../controllers/bookInstanceController");
@@ -10,7 +10,7 @@ const book_instance_controller = require("../controllers/bookInstanceController"
 /// BOOK ROUTES ///
 
 // GET catalog home page.
-router.get("/", book_controller.index);
+router.get("/", item_controller.index);
 
 // GET request for creating a Book. NOTE This must come before routes that display Book (uses id).
 router.get("/book/create", book_controller.book_create_get);

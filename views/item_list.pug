@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  if item_list.length
+    ul
+      each item in item_list
+        li
+          if item.stock > 0
+            a(href=item.url) #{item.name}
+            span.text-success #{item.stock} in stock
+          else 
+            a(href=item.url) #{item.name}
+            span.text-warning Out of stock  
+
+  else
+    p There are no items.

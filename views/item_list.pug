@@ -7,11 +7,14 @@ block content
       each item in item_list
         li
           if item.stock > 0
-            a(href=item.url) #{item.name}
+            a(href=item.url) #{item.name} 
+            | - 
             span.text-success #{item.stock} in stock
           else 
-            a(href=item.url) #{item.name}
+            a(href=item.url) #{item.name} 
+            | - 
             span.text-warning Out of stock  
+          p #{item.description}
 
   else
     p There are no items.

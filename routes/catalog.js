@@ -3,64 +3,64 @@ const router = express.Router();
 
 // Require controller modules.
 const item_controller = require("../controllers/itemController");
-// const author_controller = require("../controllers/authorController");
+const creator_controller = require("../controllers/creatorController");
 // const genre_controller = require("../controllers/genreController");
-// const book_instance_controller = require("../controllers/bookInstanceController");
+// const item_instance_controller = require("../controllers/itemInstanceController");
 
-/// BOOK ROUTES ///
+/// item ROUTES ///
 
 // GET catalog home page.
 router.get("/", item_controller.index);
 
-// // GET request for creating a Book. NOTE This must come before routes that display Book (uses id).
-// router.get("/book/create", book_controller.book_create_get);
+// // GET request for creating a item. NOTE This must come before routes that display item (uses id).
+// router.get("/item/create", item_controller.item_create_get);
 
-// // POST request for creating Book.
-// router.post("/book/create", book_controller.book_create_post);
+// // POST request for creating item.
+// router.post("/item/create", item_controller.item_create_post);
 
-// // GET request to delete Book.
-// router.get("/book/:id/delete", book_controller.book_delete_get);
+// // GET request to delete item.
+// router.get("/item/:id/delete", item_controller.item_delete_get);
 
-// // POST request to delete Book.
-// router.post("/book/:id/delete", book_controller.book_delete_post);
+// // POST request to delete item.
+// router.post("/item/:id/delete", item_controller.item_delete_post);
 
-// // GET request to update Book.
-// router.get("/book/:id/update", book_controller.book_update_get);
+// // GET request to update item.
+// router.get("/item/:id/update", item_controller.item_update_get);
 
-// // POST request to update Book.
-// router.post("/book/:id/update", book_controller.book_update_post);
+// // POST request to update item.
+// router.post("/item/:id/update", item_controller.item_update_post);
 
-// // GET request for one Book.
-// router.get("/book/:id", book_controller.book_detail);
+// // GET request for one item.
+// router.get("/item/:id", item_controller.item_detail);
 
 // GET request for list of all items.
 router.get("/items", item_controller.item_list);
 
-// /// AUTHOR ROUTES ///
+// /// creatOR ROUTES ///
 
-// // GET request for creating Author. NOTE This must come before route for id (i.e. display author).
-// router.get("/author/create", author_controller.author_create_get);
+// // GET request for creating creator. NOTE This must come before route for id (i.e. display creator).
+// router.get("/creator/create", creator_controller.creator_create_get);
 
-// // POST request for creating Author.
-// router.post("/author/create", author_controller.author_create_post);
+// // POST request for creating creator.
+// router.post("/creator/create", creator_controller.creator_create_post);
 
-// // GET request to delete Author.
-// router.get("/author/:id/delete", author_controller.author_delete_get);
+// // GET request to delete creator.
+// router.get("/creator/:id/delete", creator_controller.creator_delete_get);
 
-// // POST request to delete Author.
-// router.post("/author/:id/delete", author_controller.author_delete_post);
+// // POST request to delete creator.
+// router.post("/creator/:id/delete", creator_controller.creator_delete_post);
 
-// // GET request to update Author.
-// router.get("/author/:id/update", author_controller.author_update_get);
+// // GET request to update creator.
+// router.get("/creator/:id/update", creator_controller.creator_update_get);
 
-// // POST request to update Author.
-// router.post("/author/:id/update", author_controller.author_update_post);
+// // POST request to update creator.
+// router.post("/creator/:id/update", creator_controller.creator_update_post);
 
-// // GET request for one Author.
-// router.get("/author/:id", author_controller.author_detail);
+// GET request for one creator.
+router.get("/creator/:id", creator_controller.creator_detail);
 
-// // GET request for list of all Authors.
-// router.get("/authors", author_controller.author_list);
+// GET request for list of all creators.
+router.get("/creators", creator_controller.creator_list);
 
 // /// GENRE ROUTES ///
 

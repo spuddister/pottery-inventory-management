@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  if creator_list.length
+    ul
+      each creator in creator_list
+        li
+          a(href=creator.url) #{creator.companyName}
+          |  in #{creator.location}
+          p #{creator.name}
+
+  else
+    p There are no creators.

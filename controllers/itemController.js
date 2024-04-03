@@ -25,7 +25,7 @@ exports.index = asyncHandler(async (req, res, next) => {
 
 // Display list of all items.
 exports.item_list = asyncHandler(async (req, res, next) => {
-  const allItems = await Item.find({}, "name type stock")
+  const allItems = await Item.find({}, "name type stock description")
     .sort({ name: 1 })
     .populate("type")
     .exec();

@@ -4,7 +4,7 @@ const router = express.Router();
 // Require controller modules.
 const item_controller = require("../controllers/itemController");
 const creator_controller = require("../controllers/creatorController");
-// const genre_controller = require("../controllers/genreController");
+const type_controller = require("../controllers/typeController");
 // const item_instance_controller = require("../controllers/itemInstanceController");
 
 /// item ROUTES ///
@@ -36,7 +36,7 @@ router.get("/item/:id", item_controller.item_detail);
 // GET request for list of all items.
 router.get("/items", item_controller.item_list);
 
-// /// creatOR ROUTES ///
+// /// CREATOR ROUTES ///
 
 // // GET request for creating creator. NOTE This must come before route for id (i.e. display creator).
 // router.get("/creator/create", creator_controller.creator_create_get);
@@ -62,33 +62,33 @@ router.get("/creator/:id", creator_controller.creator_detail);
 // GET request for list of all creators.
 router.get("/creators", creator_controller.creator_list);
 
-// /// GENRE ROUTES ///
+/// TYPE ROUTES ///
 
 // // GET request for creating a Genre. NOTE This must come before route that displays Genre (uses id).
-// router.get("/genre/create", genre_controller.genre_create_get);
+// router.get("/type/create", type_controller.type_create_get);
 
 // //POST request for creating Genre.
-// router.post("/genre/create", genre_controller.genre_create_post);
+// router.post("/type/create", type_controller.type_create_post);
 
 // // GET request to delete Genre.
-// router.get("/genre/:id/delete", genre_controller.genre_delete_get);
+// router.get("/type/:id/delete", type_controller.type_delete_get);
 
 // // POST request to delete Genre.
-// router.post("/genre/:id/delete", genre_controller.genre_delete_post);
+// router.post("/type/:id/delete", type_controller.type_delete_post);
 
 // // GET request to update Genre.
-// router.get("/genre/:id/update", genre_controller.genre_update_get);
+// router.get("/type/:id/update", type_controller.type_update_get);
 
 // // POST request to update Genre.
-// router.post("/genre/:id/update", genre_controller.genre_update_post);
+// router.post("/type/:id/update", type_controller.type_update_post);
 
 // // GET request for one Genre.
-// router.get("/genre/:id", genre_controller.genre_detail);
+// router.get("/type/:id", type_controller.type_detail);
 
-// // GET request for list of all Genre.
-// router.get("/genres", genre_controller.genre_list);
+// GET request for list of all Types.
+router.get("/types", type_controller.type_list);
 
-// /// BOOKINSTANCE ROUTES ///
+/// BOOKINSTANCE ROUTES ///
 
 // // GET request for creating a BookInstance. NOTE This must come before route that displays BookInstance (uses id).
 // router.get(

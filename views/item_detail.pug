@@ -1,0 +1,56 @@
+extends layout
+
+block content
+  h1 #{item.name}
+
+  p #[strong Creator: ]
+    a(href=item.creator.url) #{item.creator.companyName}
+  p #[strong Description:] #{item.description}
+  p #[strong Types: ]
+    each t,index in item.type 
+      a(href=t.url) #{t.name}
+        if index != item.type.length-1
+          |, 
+  p #[strong Categories:] 
+    each c,index in item.category 
+      a(href=c.url)  #{c.name}
+        if index != item.category.length-1
+          |, 
+  p #[strong Dimensions:] 
+    if item.dimensions.height
+      br
+      | Height: #{item.dimensions.height} inches 
+    if item.dimensions.width
+      br
+      | Width: #{item.dimensions.width} inches
+    if item.dimensions.depth
+      br
+      | Depth: #{item.dimensions.depth} inches
+
+
+  //- div(style='margin-left:20px;margin-top:20px')
+  //-   h4 Copies
+
+  //-   each val in item_instances
+  //-     hr
+  //-     if val.status=='Available'
+  //-       p.text-success #{val.status}
+  //-     else if val.status=='Maintenance'
+  //-       p.text-danger #{val.status}
+  //-     else
+  //-       p.text-warning #{val.status}
+  //-     p #[strong Imprint:] #{val.imprint}
+  //-     if val.status!='Available'
+  //-       p #[strong Due back:] #{val.due_back_formatted}
+  //-     p #[strong Id: ]
+  //-       a(href=val.url) #{val._id}
+
+  //-   else
+  //-     p There are no copies of this item in the library.
+
+  hr
+  p
+    a(href=item.url+'/update') Edit Item
+  p
+    a(href=item.url+'/delete') Delete Item
+  
